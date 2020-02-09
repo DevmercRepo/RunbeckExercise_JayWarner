@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunbeckExercise_JayWarner", "RunbeckExercise_JayWarner\RunbeckExercise_JayWarner.csproj", "{4EFEAEE3-6B5E-4098-8B6B-72ECF661FA47}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4A237CC-3221-433C-8B30-002352AF396C}"
+	ProjectSection(SolutionItems) = preProject
+		Software Code Test.docx = Software Code Test.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
