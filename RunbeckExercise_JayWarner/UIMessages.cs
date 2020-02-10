@@ -14,6 +14,13 @@ namespace RunbeckExercise_JayWarner
 {
     public static class UIMessages
     {        
+        public static string ActionKeys
+        {
+            get
+            {
+                return string.Concat(RequestForHelpKey, RequestToRestartKey, RequetToExitKey);
+            }
+        }
         //files to write to 
         public static string FilePath_ValidData
         {

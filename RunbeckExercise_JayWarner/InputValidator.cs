@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 /// <summary>
 /// Class			:InputValidator
@@ -28,7 +29,13 @@ namespace RunbeckExercise_JayWarner
         private const string INVALID_FILEPATH = "File was not found.";
         private const string INVALID_FILEFORMAT = "File format is not supported";
         private const string INVALID_INPUT = "Invalid input detected";
-        
+
+        public char[] ValidKeys { get; set; }
+
+        public InputValidator(params char[] validKeys)
+        {
+            ValidKeys = validKeys;
+        }
         /// <summary>
         /// Check if the input is valid for the required type
         /// </summary>
@@ -104,6 +111,10 @@ namespace RunbeckExercise_JayWarner
             return false;
         }
 
+        public bool IsValidSingleKeyPress(string value)
+        {
+            return Array.Exists(ValidKeys, x => x.ToString() == value);   
+        }
         /// <summary>
         /// Raise a error message to any callers
         /// </summary>

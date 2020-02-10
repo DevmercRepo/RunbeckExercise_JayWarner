@@ -30,7 +30,7 @@ namespace RunbeckExercise_JayWarner
         
         static void Main(string[] args)
         {
-            validationHelper = new InputValidator();
+            validationHelper = new InputValidator(UIMessages.ActionKeys.ToCharArray());
             validationHelper.OnValidationErrorSent += Helper_OnMessageSent;
 
             try
@@ -146,12 +146,10 @@ namespace RunbeckExercise_JayWarner
                 Console.Write(string.Format("{0} {1}", request, UIMessages.MessageHelpExitRestart));
                 response = Console.ReadLine().Trim().ToUpper();
             }
-            while 
+            while
             (
-                response != UIMessages.RequestForHelpKey
-                && response != UIMessages.RequetToExitKey
-                && response!= UIMessages.RequestToRestartKey
-                && !validationHelper.ValidateUserInput(validator, response)
+                !validationHelper.ValidateUserInput(validationHelper.IsValidSingleKeyPress, response)
+                && !validationHelper.ValidateUserInput(validator, response)         
             );
 
             if (response == UIMessages.RequestToRestartKey) AppStart();//restart the application 
